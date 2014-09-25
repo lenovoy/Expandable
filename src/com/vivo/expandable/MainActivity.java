@@ -136,17 +136,18 @@ public class MainActivity extends ExpandableListActivity {
 		
 		@Override
 		public void onGroupCollapsed(int groupPosition) {
-			if(0!=child.get(groupPosition).size()){
-				child.get(groupPosition).clear();
-			}
+			
 	    }
 		
 		@Override
 	    public void onGroupExpanded(int groupPosition) {
-			String[] strs=new String[]{"female","138123***","GuangZhou"};
-			for(int i=0;i<strs.length;i++){
-				child.get(groupPosition).add(strs[i]);
+			if(child.get(groupPosition).size()==0){
+				String[] strs=new String[]{"female","138123***","GuangZhou"};
+				for(int i=0;i<strs.length;i++){
+					child.get(groupPosition).add(strs[i]);
+				}
 			}
+			
 	    }
 		
 		
